@@ -364,8 +364,8 @@ footer .wrap { font-family: var(--mono); font-size: 0.78rem; color: var(--muted)
         <div><p class="label">Holodeck · 2026</p><h3>An AI dev team with guardrails</h3></div>
         <dl>
           <div><dt>The problem</dt><dd>I wanted AI coding agents that could work unattended for hours without drifting off task, overspending or breaking the build.</dd></div>
-          <div><dt>What I did</dt><dd>Built a system of specialist agents that take work by voice or Discord. Each one runs behind budget caps, review gates, isolated git worktrees and automatic rollback.</dd></div>
-          <div><dt>How it was proven</dt><dd>About 7,000 commits and more than 600 test files in five months. Changes reach the main branch only through review.</dd></div>
+          <div><dt>What I did</dt><dd>Built a system of specialist agents that take work by voice or Discord. Each one works in its own git worktree, passes review gates before its work merges, and runs under spend metering, a concurrency limit and a time limit.</dd></div>
+          <div><dt>How it was proven</dt><dd>About 7,000 commits, more than 1,300 merged pull requests and more than 600 test files in four months. Since September, every change has reached the main branch through a pull request and automated gates.</dd></div>
         </dl>
       </article>
     </div>

@@ -1,0 +1,442 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="canonical" href="https://codingcovered.com/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://codingcovered.com/">
+<meta property="og:title" content="Coding Covered">
+<meta property="og:description" content="AI writes code fast. I make sure it's right. Fixed-price fixes, upgrades and migrations for production web and mobile apps.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2316201b'/%3E%3Cpath d='M9 16.5l4.5 4.5L23 11.5' fill='none' stroke='%2386a6ff' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<style>
+:root { color-scheme: light; padding-top: env(safe-area-inset-top, 0px); padding-bottom: env(safe-area-inset-bottom, 0px); }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; }
+img { max-width: 100%; }
+[hidden] { display: none !important; }
+</style>
+<title>Coding Covered</title>
+<meta name="description" content="Jared Cover: fixed-price fixes, upgrades and migrations for production web and mobile apps, proven before they ship.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=IBM+Plex+Mono:wght@400;500&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+<style>
+/* Layout: an inspection report. A narrow column of argument, with wide evidence panels (the parity check, the record) set beside it. */
+:root {
+  --paper: #eff2ee;
+  --ink: #16201b;
+  --muted: #56625b;
+  --rule: #c8d0c9;
+  --panel: #e2e8e2;
+  --accent: #2149bd;
+  --pass: #1b7445;
+  --display: "Bricolage Grotesque", "Arial Narrow", "Helvetica Neue", Arial, sans-serif;
+  --body: "Source Serif 4", Georgia, "Times New Roman", serif;
+  --mono: "IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
+  --measure: 62ch;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #0f1512; --ink: #e2e9e4; --muted: #94a299; --rule: #2a352f;
+    --panel: #18211c; --accent: #86a6ff; --pass: #5cc893; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #0f1512; --ink: #e2e9e4; --muted: #94a299; --rule: #2a352f;
+  --panel: #18211c; --accent: #86a6ff; --pass: #5cc893; color-scheme: dark;
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--body);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.wrap {
+  max-width: 1100px;
+  margin-inline: auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+@media (min-width: 720px) {
+  .wrap {
+    padding-left: max(32px, env(safe-area-inset-left, 0px));
+    padding-right: max(32px, env(safe-area-inset-right, 0px));
+  }
+}
+a { color: var(--accent); text-underline-offset: 0.18em; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+h1, h2, h3 { font-family: var(--display); text-wrap: balance; margin: 0; }
+p { margin: 0; }
+
+/* Top bar */
+.top { border-bottom: 1px solid var(--rule); }
+.topbar {
+  display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between;
+  gap: 4px 24px; padding-block: 18px;
+}
+.mark {
+  font-family: var(--display); font-weight: 800; font-size: 1.2rem; letter-spacing: -0.01em;
+}
+.mark span { color: var(--accent); }
+.who { font-family: var(--mono); font-size: 0.8rem; color: var(--muted); }
+
+/* Hero */
+.hero {
+  display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+  gap: 56px; align-items: center; padding-block: 72px 64px;
+}
+.eyebrow {
+  font-family: var(--mono); font-size: 0.78rem; text-transform: uppercase;
+  letter-spacing: 0.08em; color: var(--muted); margin-bottom: 20px;
+}
+h1 {
+  font-size: clamp(2.5rem, 5.4vw, 4.25rem); font-weight: 750;
+  line-height: 1.02; letter-spacing: -0.025em;
+}
+h1 .second { display: block; color: var(--accent); }
+.lede { margin-top: 24px; max-width: 52ch; font-size: 1.15rem; color: var(--ink); }
+.cta { margin-top: 32px; display: flex; flex-wrap: wrap; gap: 12px 20px; align-items: center; }
+.btn {
+  display: inline-block; font-family: var(--display); font-weight: 650; font-size: 1rem;
+  background: var(--ink); color: var(--paper); text-decoration: none;
+  padding: 12px 20px; border-radius: 8px;
+}
+.btn:hover { background: var(--accent); }
+.cta-note { font-size: 0.95rem; color: var(--muted); }
+
+/* Parity evidence panel */
+.evidence {
+  margin: 0; background: var(--panel); border: 1px solid var(--rule);
+  border-radius: 12px; padding: 20px 20px 18px; min-width: 0;
+}
+.evidence figcaption {
+  font-family: var(--mono); font-size: 0.75rem; color: var(--muted);
+  text-transform: uppercase; letter-spacing: 0.07em; margin-bottom: 14px;
+  display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap;
+}
+.scroll { overflow-x: auto; }
+table.parity {
+  width: 100%; border-collapse: collapse; font-family: var(--mono); font-size: 0.82rem;
+  font-variant-numeric: tabular-nums; white-space: nowrap;
+}
+.parity th {
+  text-align: left; font-weight: 500; color: var(--muted); font-size: 0.72rem;
+  text-transform: uppercase; letter-spacing: 0.06em; padding: 0 10px 8px 0;
+  border-bottom: 1px solid var(--rule);
+}
+.parity td { padding: 9px 10px 9px 0; border-bottom: 1px solid var(--rule); }
+.parity tr:last-child td { border-bottom: 0; }
+.parity .verb { color: var(--muted); margin-right: 6px; }
+.parity .ok { color: var(--pass); font-weight: 500; }
+.parity tbody tr { animation: land 420ms ease-out backwards; }
+.parity tbody tr:nth-child(1) { animation-delay: 150ms; }
+.parity tbody tr:nth-child(2) { animation-delay: 300ms; }
+.parity tbody tr:nth-child(3) { animation-delay: 450ms; }
+.parity tbody tr:nth-child(4) { animation-delay: 600ms; }
+.parity tbody tr:nth-child(5) { animation-delay: 750ms; }
+@keyframes land { from { opacity: 0.35; transform: translateY(3px); } to { opacity: 1; transform: none; } }
+.evidence .foot { margin-top: 14px; font-size: 0.95rem; color: var(--ink); }
+.evidence .foot strong { font-family: var(--display); font-weight: 700; }
+
+/* Record */
+.record { padding-block: 8px 72px; }
+.record dl {
+  margin: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 28px;
+}
+.record div { border-top: 2px solid var(--ink); padding-top: 14px; }
+.record dt {
+  font-family: var(--display); font-weight: 750; font-size: 1.6rem; letter-spacing: -0.015em;
+  line-height: 1.1; font-variant-numeric: tabular-nums;
+}
+.record dd { margin: 8px 0 0; color: var(--muted); font-size: 0.98rem; }
+
+/* Sections */
+.section { padding-block: 72px; border-top: 1px solid var(--rule); }
+.section-head { display: grid; gap: 12px; margin-bottom: 36px; max-width: var(--measure); }
+.label {
+  font-family: var(--mono); font-size: 0.78rem; text-transform: uppercase;
+  letter-spacing: 0.08em; color: var(--muted);
+}
+h2 { font-size: clamp(1.8rem, 3.4vw, 2.6rem); font-weight: 750; letter-spacing: -0.02em; line-height: 1.08; }
+.section-head p { color: var(--muted); }
+
+/* Services */
+.svc { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--rule); }
+.svc li {
+  display: grid; grid-template-columns: minmax(0, 1fr) 11rem; gap: 8px 32px;
+  padding-block: 22px; border-bottom: 1px solid var(--rule); align-items: start;
+}
+.svc h3 { font-size: 1.25rem; font-weight: 700; letter-spacing: -0.01em; }
+.svc p { margin-top: 6px; color: var(--muted); max-width: var(--measure); }
+.svc .price {
+  font-family: var(--mono); font-size: 0.9rem; text-align: right;
+  font-variant-numeric: tabular-nums; display: grid; gap: 2px; padding-top: 4px;
+}
+.svc .price b { font-weight: 500; color: var(--ink); font-size: 1rem; }
+.svc .price span { color: var(--muted); }
+.svc-note { margin-top: 20px; color: var(--muted); font-size: 0.95rem; max-width: var(--measure); }
+
+/* Work */
+.case {
+  display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); gap: 16px 48px;
+  padding-block: 32px; border-top: 1px solid var(--rule);
+}
+.case:last-child { border-bottom: 1px solid var(--rule); }
+.case h3 { font-size: 1.5rem; font-weight: 750; letter-spacing: -0.015em; line-height: 1.12; margin-top: 8px; }
+.case dl { margin: 0; display: grid; gap: 16px; }
+.case dt {
+  font-family: var(--mono); font-size: 0.75rem; text-transform: uppercase;
+  letter-spacing: 0.07em; color: var(--muted);
+}
+.case dd { margin: 4px 0 0; max-width: var(--measure); }
+
+/* Process */
+.steps { list-style: none; margin: 0; padding: 0; counter-reset: step; display: grid; gap: 0; max-width: 46rem; }
+.steps li {
+  counter-increment: step; display: grid; grid-template-columns: 3rem minmax(0, 1fr); gap: 16px;
+  padding-block: 18px; border-top: 1px solid var(--rule);
+}
+.steps li::before {
+  content: counter(step); font-family: var(--display); font-weight: 800; font-size: 1.6rem;
+  line-height: 1; color: var(--accent); font-variant-numeric: tabular-nums;
+}
+.steps strong { font-family: var(--display); font-weight: 700; }
+.aside { margin-top: 28px; max-width: var(--measure); padding: 18px 20px; background: var(--panel); border-radius: 10px; }
+
+/* About */
+.about { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); gap: 16px 48px; }
+.about .text { display: grid; gap: 16px; max-width: var(--measure); }
+
+/* Contact */
+.contact { background: var(--panel); border-top: 1px solid var(--rule); }
+.contact .wrap { padding-block: 72px; display: grid; gap: 20px; }
+.contact h2 { max-width: 22ch; }
+.contact p { max-width: var(--measure); color: var(--muted); }
+.email-row { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+.email {
+  font-family: var(--mono); font-size: clamp(1.05rem, 2.6vw, 1.45rem); color: var(--ink);
+  background: var(--paper); border: 1px solid var(--rule); border-radius: 8px;
+  padding: 10px 16px; user-select: all; overflow-wrap: anywhere;
+}
+.copy {
+  font-family: var(--display); font-weight: 650; font-size: 0.95rem; cursor: pointer;
+  background: var(--ink); color: var(--paper); border: 0; border-radius: 8px; padding: 12px 18px;
+}
+.copy:hover { background: var(--accent); }
+.copied { font-family: var(--mono); font-size: 0.85rem; color: var(--pass); min-height: 1.2em; }
+
+footer { padding-block: 28px; }
+footer .wrap { font-family: var(--mono); font-size: 0.78rem; color: var(--muted); }
+
+@media (max-width: 900px) {
+  .hero { grid-template-columns: minmax(0, 1fr); gap: 40px; padding-block: 48px; }
+  .record dl { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .case, .about { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 560px) {
+  .record dl { grid-template-columns: minmax(0, 1fr); gap: 20px; }
+  .svc li { grid-template-columns: minmax(0, 1fr); }
+  .svc .price { text-align: left; grid-auto-flow: column; justify-content: start; gap: 12px; }
+  .section { padding-block: 56px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .parity tbody tr { animation: none; }
+}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap topbar">
+    <span class="mark">Coding <span>Covered</span></span>
+    <span class="who">Jared Cover · independent engineer · remote, US</span>
+  </div>
+</header>
+
+<main>
+  <section class="wrap hero" aria-labelledby="h-hero">
+    <div>
+      <p class="eyebrow">Fixed-price software work, proven before it ships</p>
+      <h1 id="h-hero">AI writes code fast. <span class="second">I make sure it's right.</span></h1>
+      <p class="lede">I fix, upgrade and finish production web and mobile apps. Since 2021 I've been the engineer behind a live SaaS platform. This year I used Claude to move its backend from PHP to Java while customers kept using it.</p>
+      <div class="cta">
+        <a class="btn" href="#contact">Get a fixed quote</a>
+        <span class="cta-note">You'll know the price before I start.</span>
+      </div>
+    </div>
+
+    <figure class="evidence" aria-label="Example parity check">
+      <figcaption><span>Parity check</span><span>example rows</span></figcaption>
+      <div class="scroll">
+        <table class="parity">
+          <thead>
+            <tr><th>Request</th><th>PHP</th><th>Java</th><th>Body</th><th>Auth</th><th>Errors</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><span class="verb">GET</span>/campaigns/{id}</td><td>200</td><td>200</td><td class="ok">✓</td><td class="ok">✓</td><td class="ok">✓</td></tr>
+            <tr><td><span class="verb">POST</span>/orders</td><td>201</td><td>201</td><td class="ok">✓</td><td class="ok">✓</td><td class="ok">✓</td></tr>
+            <tr><td><span class="verb">PATCH</span>/account/plan</td><td>422</td><td>422</td><td class="ok">✓</td><td class="ok">✓</td><td class="ok">✓</td></tr>
+            <tr><td><span class="verb">GET</span>/templates?page=2</td><td>200</td><td>200</td><td class="ok">✓</td><td class="ok">✓</td><td class="ok">✓</td></tr>
+            <tr><td><span class="verb">DELETE</span>/contacts/{id}</td><td>403</td><td>403</td><td class="ok">✓</td><td class="ok">✓</td><td class="ok">✓</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="foot">Each of <strong>137 endpoints</strong> has to return the same responses, auth failures and validation errors as the PHP original before any traffic moves to it.</p>
+    </figure>
+  </section>
+
+  <section class="wrap record" aria-label="Track record">
+    <dl>
+      <div><dt>Since 2021</dt><dd>Core engineer on one live SaaS platform: web app, APIs and mobile app</dd></div>
+      <div><dt>137 endpoints</dt><dd>Moved from Laravel to Java on AWS, each one checked against the original</dd></div>
+      <div><dt>Expo 57</dt><dd>Lead developer of the platform's iOS and Android app</dd></div>
+      <div><dt>600+ test files</dt><dd>In Holodeck, my own multi-agent dev system with guardrails</dd></div>
+    </dl>
+  </section>
+
+  <section class="section" id="services" aria-labelledby="h-services">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="label">Services</p>
+        <h2 id="h-services">Six jobs, each with a fixed price</h2>
+        <p>Every job starts with a written scope and a price. The prices below are the smallest size of each job.</p>
+      </div>
+      <ul class="svc">
+        <li>
+          <div><h3>Fix and harden your AI-built app</h3><p>Built with Lovable, Bolt, Replit or Cursor, and not sure it's safe for real users and payments? You get an audit ranked by risk, then the fixes.</p></div>
+          <div class="price"><b>from $750</b><span>3 days</span></div>
+        </li>
+        <li>
+          <div><h3>Upgrade your Expo app</h3><p>An old SDK or an app store deadline. I upgrade the app, replace libraries that no longer work, and test the iOS and Android builds.</p></div>
+          <div class="price"><b>from $900</b><span>4 days</span></div>
+        </li>
+        <li>
+          <div><h3>End-to-end tests for your web app</h3><p>Playwright tests for the flows that make you money, such as sign-up, login and checkout. They run on every push.</p></div>
+          <div class="price"><b>from $800</b><span>4 days</span></div>
+        </li>
+        <li>
+          <div><h3>Connect Claude to your product</h3><p>An MCP server that gives Claude safe, specific tools over your API or database, for your team or your customers.</p></div>
+          <div class="price"><b>from $1,000</b><span>5 days</span></div>
+        </li>
+        <li>
+          <div><h3>Plan your legacy migration</h3><p>Every live endpoint mapped, dead routes flagged, and a phased plan with a fixed price per phase. Bigger tiers add the parity harness and a pilot.</p></div>
+          <div class="price"><b>from $1,500</b><span>5 days</span></div>
+        </li>
+        <li>
+          <div><h3>Make your team's AI coding trustworthy</h3><p>Instructions the agent follows, tests it has to pass, a review gate before merge and checks in CI, so AI changes stop breaking things.</p></div>
+          <div class="price"><b>from $1,500</b><span>5 days</span></div>
+        </li>
+      </ul>
+      <p class="svc-note">Something else? Describe it and I'll quote it the same way.</p>
+    </div>
+  </section>
+
+  <section class="section" id="work" aria-labelledby="h-work">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="label">Work</p>
+        <h2 id="h-work">What I've built, and how it was proven</h2>
+      </div>
+
+      <article class="case">
+        <div><p class="label">PRINTgenie · 2023 to now</p><h3>Moving a live backend from PHP to Java</h3></div>
+        <dl>
+          <div><dt>The problem</dt><dd>PRINTgenie, a direct-mail marketing platform for real-estate professionals, ran on a Laravel API that was getting harder to change. Paying customers used it every day.</dd></div>
+          <div><dt>What I did</dt><dd>Rebuilt 137 endpoints as Java plugins on AWS (S3, SQS, Terraform). Repointed the React frontend one endpoint at a time, then retired the Laravel routes left behind.</dd></div>
+          <div><dt>How it was proven</dt><dd>A parity harness compares each endpoint with the PHP original, including auth failures and validation errors. Audit tooling lists every endpoint the live system serves and flags drift from the plan. The QA team signs off each release.</dd></div>
+        </dl>
+      </article>
+
+      <article class="case">
+        <div><p class="label">PRINTgenie · mobile</p><h3>Keeping a field app current</h3></div>
+        <dl>
+          <div><dt>The problem</dt><dd>Real-estate professionals use the company's Expo app out in the field. It has to keep up with SDK releases and app store rules without breaking for them.</dd></div>
+          <div><dt>What I did</dt><dd>Lead developer, with about 75% of the app's commits. Releases through EAS, crash monitoring with Sentry, and SDK upgrades through Expo 57 and React Native 0.86.</dd></div>
+          <div><dt>How it was proven</dt><dd>QA tests real iOS and Android builds before each release, and Sentry shows what users actually hit.</dd></div>
+        </dl>
+      </article>
+
+      <article class="case">
+        <div><p class="label">Holodeck · 2026</p><h3>An AI dev team with guardrails</h3></div>
+        <dl>
+          <div><dt>The problem</dt><dd>AI coding agents are fast, but left alone they drift, overspend and break things.</dd></div>
+          <div><dt>What I did</dt><dd>Built a system of specialist agents that take work by voice or Discord. Each one runs behind budget caps, review gates, isolated git worktrees and automatic rollback.</dd></div>
+          <div><dt>How it was proven</dt><dd>About 7,000 commits and more than 600 test files in five months. Changes reach the main branch only through review.</dd></div>
+        </dl>
+      </article>
+    </div>
+  </section>
+
+  <section class="section" id="process" aria-labelledby="h-process">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="label">How it works</p>
+        <h2 id="h-process">From first email to finished work</h2>
+      </div>
+      <ol class="steps">
+        <li><div><strong>You tell me what's broken or what you need.</strong> A paragraph is enough.</div></li>
+        <li><div><strong>I reply with a fixed price,</strong> a timeline and written acceptance criteria, so "done" means the same thing to both of us.</div></li>
+        <li><div><strong>You pay a 50% deposit.</strong> If you'd rather hold funds in escrow, we can use Contra or Escrow.com.</div></li>
+        <li><div><strong>I work in your repository</strong>, with tests, and send short written updates.</div></li>
+        <li><div><strong>You check the work against the criteria.</strong> The balance is due on delivery, and the code is yours once it's paid.</div></li>
+      </ol>
+      <p class="aside">I build with AI coding agents, mainly Claude, and I review and test everything they write before you see it.</p>
+    </div>
+  </section>
+
+  <section class="section" id="about" aria-labelledby="h-about">
+    <div class="wrap about">
+      <div><p class="label">About</p><h2 id="h-about">Jared Cover</h2></div>
+      <div class="text">
+        <p>I've been the engineer behind PRINTgenie since 2021, across its React web app, its Laravel and Java APIs on AWS, and its Expo mobile app. Before AI coding tools existed I learned the slow way, reading every error and fixing it by hand. That's how I can tell when an AI is wrong.</p>
+        <p>Now I build with Claude every day. I write tests before I trust a result, and I ship nothing I haven't checked. I work on my own, in writing, at a fixed price, and I'd rather prove a change than promise it.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact" aria-labelledby="h-contact">
+    <div class="wrap">
+      <p class="label">Contact</p>
+      <h2 id="h-contact">Tell me what's broken or what you need.</h2>
+      <p>I'll reply with a fixed price and a timeline. Email is the best way to reach me.</p>
+      <div class="email-row">
+        <a class="email" id="email" href="mailto:jhcover@gmail.com">jhcover@gmail.com</a>
+        <button class="copy" id="copy-email" type="button">Copy address</button>
+      </div>
+      <p class="copied" id="copied" aria-live="polite"></p>
+    </div>
+  </section>
+</main>
+
+<footer><div class="wrap">© 2026 Coding Covered · Jared Cover</div></footer>
+
+<script>
+(function () {
+  var btn = document.getElementById('copy-email');
+  var addr = document.getElementById('email');
+  var note = document.getElementById('copied');
+  function selectAddress() {
+    var range = document.createRange();
+    range.selectNodeContents(addr);
+    var sel = window.getSelection();
+    sel.removeAllRanges();
+    sel.addRange(range);
+  }
+  btn.addEventListener('click', function () {
+    var text = addr.textContent.trim();
+    var done = function () { note.textContent = 'Copied ' + text; };
+    var fallback = function () { selectAddress(); note.textContent = 'Address selected. Press Ctrl+C or Cmd+C to copy it.'; };
+    try {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(done, fallback);
+      } else { fallback(); }
+    } catch (e) { fallback(); }
+  });
+})();
+</script>
+</body>
+</html>
